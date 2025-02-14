@@ -1,0 +1,118 @@
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: calc(20px + 10px); // 10px - app_landing_page padding
+  padding-bottom: 20px;
+  background-color: #f3f9f9;
+
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  &--show_mobile_menu {
+    @include screen('lg') {
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+    }
+  }
+
+  .app__header__logo--light {
+    display: none;
+  }
+
+  &--light {
+    background-color: rgba(0,0,0,.5);
+
+    &.app__header--show_mobile_menu {
+      background-color: rgba(0,0,0,.7);
+    }
+
+    .app__header__logo {
+      display: none;
+
+      &--light {
+        display: block;
+      }
+    }
+
+    .app__header__ul__li__a {
+      color: #fff;
+    }
+
+    svg.hamburger {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &__mobile_menu_content {
+    display: none;
+    // height: calc(100% - 30px - 20px - 24px);
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    overflow-y: auto;
+
+    @include screen('lg') {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .app__header__ul  {
+      margin-top: 95px;
+      flex-direction: column;
+    }
+
+    .app_hero_section__content__txt__action {
+      margin-top: 65px;
+    }
+
+    &__footer {
+      border-top: 1px solid #8B8787;
+      padding-top: 12px;
+      width: 100%;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__logo {
+    max-width: 147px;
+    height: auto;
+
+    @include screen('lg') {
+      max-width: 100px;
+    }
+  }
+
+  &__ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &__li {
+      &__a {
+        color: var(--sub-text-color);
+        font-family: General Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--sub-text-color);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+.app_footer {
+  background: var(--text-color);
+  min-height: 430px;
+  margin-top: 80px;
+  padding-top: calc(60px + 80px);
+  padding-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__union {
+    position: absolute;
+    top: -100px;
+    width: 100%;
+  }
+
+  &__contact_us {
+    width: 100%;
+    margin-top: -300px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+
+    &__con {
+      border-radius: 20px;
+      background: #FFF;
+      box-shadow: 0px -2px 12px 1px rgba(19, 15, 38, 0.06);
+      min-height: 185px;
+      padding: 50px 148px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include screen('xl') {
+        padding: 40px 84px;
+      }
+
+      @include screen('lg') {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        @include screen('lg') {
+          gap: 16px;
+        }
+
+        &__item {
+          display: flex;
+          gap: 22px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 102px;
+    justify-content: space-between;
+
+    @include screen('xl') {
+      gap: 82px;
+    }
+
+    @include screen('lg') {
+      flex-direction: column;
+      gap: 42px;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: #fefefe;
+      font-size: 14px;
+
+      &:first-child {
+        max-width: 267px;
+      }
+
+      &:last-child {
+        max-width: 364px;
+      }
+
+      &__text p {
+        line-height: 200%;
+      }
+
+      h5 {
+        margin-bottom: 3px !important;
+      }
+
+      &__subscribe {
+        border-radius: 45.595px;
+        border: 2px solid #f1f1f1;
+        background: #fff;
+        display: flex;
+        gap: 5px;
+        padding: 7px 18px;
+
+        &__input {
+          flex: 1;
+          color: #333;
+
+          &::placeholder {
+            color: #959595;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+
+        &__button {
+          all: unset;
+          cursor: pointer;
+          border-radius: 50px;
+          background: #06382e;
+          box-shadow: 0px 10px 50px 0px rgba(171, 171, 171, 0.19);
+          padding: 15px 30px;
+        }
+      }
+    }
+  }
+
+  &__btm {
+    border-top: 0.5px solid #fff;
+    color: #fefefe;
+    font-size: 14px;
+    padding: 16px 10px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include screen('lg') {
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px 0;
+    }
+
+    &__socials {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
