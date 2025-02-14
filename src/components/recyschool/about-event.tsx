@@ -34,7 +34,7 @@ function AboutEvent() {
               variant="h1"
               className="app_aboutevent_section__content__txt__title"
             >
-              Recyschool 2023
+              Recyschool 2025
             </Typography>
             <Typography className="app_aboutevent_section__content__txt__p">
               The Recyschool is aimed at transforming collectible waste into valuable finished products.

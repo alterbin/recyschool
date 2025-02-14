@@ -1,6 +1,6 @@
 'use client';
 
-import { recyschoolMetaData } from '@/utils/static';
+import { metaData } from '@/utils/static';
 import { Footer, Metas, Navbar } from '../components';
 import {
   AboutEvent,
@@ -14,7 +14,7 @@ import { Provider } from '../contexts/global';
 export default function Page() {
   return (
     <Provider>
-      <Metas data={recyschoolMetaData} />
+      <Metas data={metaData} />
 
       <main className="app_landing_page app_recyschool_page">
         <Navbar variant="light" />
