@@ -8,6 +8,8 @@ import Typography from './typography';
 import Socials from './socials';
 
 const { WEB_APP_URL: RECYCATHON_WEB_APP_URL } = config.services.google.sheets;
+const parentWebsite = 'https://www.alterbin.com/#';
+const aboutUsPage = `${parentWebsite}${routes.home.hash.aboutUs}`;
 
 function Union() {
   return (
@@ -119,8 +121,8 @@ function FooterC() {
 
           <div className="app_footer__content__item__text">
             <Typography variant="p">Recyschool</Typography>
-            <a href={`https://philan.alterbin.com`} style={{ color: '#fefefe' }}>
-            <Typography variant="p">Philan</Typography>
+            <a href="https://philan.alterbin.com" style={{ color: '#fefefe' }}>
+              <Typography variant="p">Philan</Typography>
             </a>
           </div>
         </div>
@@ -131,7 +133,7 @@ function FooterC() {
           </Typography>
 
           <div className="app_footer__content__item__text">
-            <a href={`https://www.alterbin.com/#${routes.home.hash.aboutUs}`} target="_blank" style={{ color: '#fefefe' }}>
+            <a href={aboutUsPage} target="_blank" rel="noopener noreferrer" style={{ color: '#fefefe' }}>
               <Typography variant="p">About Us</Typography>
             </a>
 

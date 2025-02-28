@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import assets from '@/utils/assets';
+import routes from '@/utils/routes';
 import Line from './line';
 import { Typography } from '../shared';
-import routes from '@/utils/routes';
+
+const prizeGivingDescription = 'Through this Alterbin’s flagship project, students in primary/secondary schools are mobilized to contribute to community waste management efforts in an organized way and are rewarded. Recyschool offers learning incentives (such as full/ partial tuition payment, learning aids- notes and textbooks, and other school needs) to participants as an exchange for the disposal of recyclable items.';
 
 function Award() {
   return (
@@ -33,9 +35,7 @@ function Award() {
 
         <div className="app_award_section__content__performance">
           <Typography className="app_award_section__content__performance__txt__px">
-            Through this Alterbin’s flagship project, students in primary/secondary schools are mobilized to contribute to community waste management efforts 
-            in an organized way and are rewarded. Recyschool offers learning incentives (such as full/ partial tuition payment, 
-            learning aids- notes and textbooks, and other school needs) to participants as an exchange for the disposal of recyclable items.
+            {prizeGivingDescription}
           </Typography>
         </div>
       </div>
@@ -79,9 +79,8 @@ function Judges() {
             />
             <div className="app_judges_section__content__img_txt">
               <Typography fontFamily="TrenchSlab" variant="h5" fontWeight="md">
-              Empathetic listener
+                Empathetic listener
               </Typography>
-              {/* <Typography>Role</Typography> */}
             </div>
           </div>
           <div className="app_judges_section__content__img">
@@ -93,7 +92,7 @@ function Judges() {
             />
             <div className="app_judges_section__content__img_txt">
               <Typography fontFamily="TrenchSlab" variant="h5" fontWeight="md">
-              Adaptive guidian
+                Adaptive guidian
               </Typography>
               {/* <Typography>Role</Typography> */}
             </div>
@@ -107,7 +106,7 @@ function Judges() {
             />
             <div className="app_judges_section__content__img_txt">
               <Typography fontFamily="TrenchSlab" variant="h5" fontWeight="md">
-              Authentic relationship-builder
+                Authentic relationship-builder
               </Typography>
               {/* <Typography variant="P-XXS">Role</Typography> */}
             </div>

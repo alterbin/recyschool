@@ -7,6 +7,8 @@ import routes from '@/utils/routes';
 import { Typography } from '../shared';
 import Line from './line';
 
+const thisYear = new Date().getFullYear();
+
 function AboutEvent() {
   return (
     <div className="app_aboutevent_section" id={routes.home.hash.learnMore}>
@@ -34,7 +36,9 @@ function AboutEvent() {
               variant="h1"
               className="app_aboutevent_section__content__txt__title"
             >
-              Recyschool {new Date().getFullYear()}
+              Recyschool
+              {' '}
+              {thisYear}
             </Typography>
             <Typography className="app_aboutevent_section__content__txt__p">
               The Recyschool is aimed at transforming collectible waste into valuable finished products.
