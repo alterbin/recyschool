@@ -119,7 +119,9 @@ function FooterC() {
 
           <div className="app_footer__content__item__text">
             <Typography variant="p">Recyschool</Typography>
+            <a href={`https://philan.alterbin.com`} style={{ color: '#fefefe' }}>
             <Typography variant="p">Philan</Typography>
+            </a>
           </div>
         </div>
 
@@ -129,7 +131,7 @@ function FooterC() {
           </Typography>
 
           <div className="app_footer__content__item__text">
-            <a href={`#${routes.home.hash.aboutUs}`} style={{ color: '#fefefe' }}>
+            <a href={`https://www.alterbin.com/#${routes.home.hash.aboutUs}`} target="_blank" style={{ color: '#fefefe' }}>
               <Typography variant="p">About Us</Typography>
             </a>
 

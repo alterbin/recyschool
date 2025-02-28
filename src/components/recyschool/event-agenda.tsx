@@ -46,25 +46,25 @@ function EventAgenda() {
               <div className="app_eventagenda_section__content__txt__list_container__list__bullet">
                 <Bullet />
               </div>
-              <Typography variant="P-LG">Online registration of participants for the competition</Typography>
+              <Typography variant="P-LG">Waste Management Awareness & Repurposing Education</Typography>
             </div>
             <div className="app_eventagenda_section__content__txt__list_container__list">
               <div className="app_eventagenda_section__content__txt__list_container__list__bullet">
                 <Bullet />
               </div>
-              <Typography variant="P-LG">On the D-day, participants showcase/present their innovations</Typography>
+              <Typography variant="P-LG">Hands-on Recycling & Task Participation</Typography>
             </div>
             <div className="app_eventagenda_section__content__txt__list_container__list">
               <div className="app_eventagenda_section__content__txt__list_container__list__bullet">
                 <Bullet />
               </div>
-              <Typography variant="P-LG">Judges how are experts in the field analyze each of the innovations presented</Typography>
+              <Typography variant="P-LG">Creative Mentorship for Waste Transformation</Typography>
             </div>
             <div className="app_eventagenda_section__content__txt__list_container__list">
               <div className="app_eventagenda_section__content__txt__list_container__list__bullet">
                 <Bullet />
               </div>
-              <Typography variant="P-LG">Award presentation to the winners</Typography>
+              <Typography variant="P-LG">Recognition & Reward for Sustainability Efforts</Typography>
             </div>
           </div>
         </div>

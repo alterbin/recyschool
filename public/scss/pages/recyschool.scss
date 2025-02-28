@@ -583,7 +583,6 @@
 }
 
 .app_award_section {
-  min-height: calc(95vh - 10px);
   padding-top: calc(5px + 20px); // 5px - header height
   padding-bottom: calc(0px + 20px); // 85px - header height
   background-color: #ffffff;
@@ -608,9 +607,7 @@
       }
     }
     &__performance {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      min-height: 350px;
+      min-height: 128px;
 
       @include screen('lg') {
         grid-template-columns: repeat(1, 1fr);

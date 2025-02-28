@@ -4,9 +4,10 @@ const routes = {
 
     hash: {
       aboutUs: 'about-us',
+      learnMore: 'learn-more',
       contactUs: 'contact-us',
-      events: 'events',
-      initiatives: 'initiatives',
+      prize: 'prize',
+      mentorship: 'mentorship',
     },
   },
   recyschool: {
@@ -15,8 +16,8 @@ const routes = {
     hash: {
       aboutUs: 'about-us',
       contactUs: 'contact-us',
-      events: 'events',
-      initiatives: 'initiatives',
+      prize: 'prize',
+      mentorship: 'mentorship',
     },
   },
 };

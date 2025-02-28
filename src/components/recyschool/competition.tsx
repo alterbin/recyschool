@@ -3,11 +3,11 @@ import Image from 'next/image';
 import assets from '@/utils/assets';
 import Line from './line';
 import { Typography } from '../shared';
-import { Bullet } from '../svgs/bullet';
+import routes from '@/utils/routes';
 
 function Award() {
   return (
-    <div className="app_award_section">
+    <div className="app_award_section" id={routes.home.hash.prize}>
       <div className="app_award_section__content app_recyschool_page__px">
         <div className="app_award_section__content__text">
           <Typography
@@ -17,11 +17,11 @@ function Award() {
             className=""
           >
             <Line />
-            AWARDS
+            PRIZE
           </Typography>
           <Typography fontFamily="TrenchSlab" variant="h1">
             {' '}
-            Recyschool Champions Get Rewarded For
+            Recyschool Participants Get Rewarded For
             {' '}
             <br />
             <span className="d-flex justify-content-center">
@@ -30,70 +30,13 @@ function Award() {
             {' '}
           </Typography>
         </div>
+
         <div className="app_award_section__content__performance">
-          <div className="app_award_section__content__performance__second">
-            {/* <div className='app_award_section__content__performance__txt'>
-            <Bullet />
-              <Typography fontFamily='TrenchSlab' variant='h4'>1st Runner Up</Typography>
-            </div> */}
-            <Image
-              src={assets.recyschool.second}
-              alt="winner"
-              priority
-              className="app_award_section__content__performance__img"
-            />
-            <div className="app_award_section__content__performance__reward">
-              <Typography
-                variant="P-SM"
-                className="app_award_section__content__performance__reward__text"
-              >
-                <Bullet />
-                <p>₦30,000.00</p>
-              </Typography>
-            </div>
-          </div>
-          <div className="app_award_section__content__performance__winner">
-            {/* <div className='app_award_section__content__performance__txt'>
-            <Bullet />
-              <Typography fontFamily='TrenchSlab' color='sec-color' variant='h4'>Winner</Typography>
-            </div> */}
-            <Image
-              src={assets.recyschool.winner}
-              alt="winner"
-              priority
-              className="app_award_section__content__performance__img_winner"
-            />
-            <div className="app_award_section__content__performance__reward">
-              <Typography
-                variant="P-SM"
-                className="app_award_section__content__performance__reward__text"
-              >
-                <Bullet />
-                <p>₦50,000.00</p>
-              </Typography>
-            </div>
-          </div>
-          <div className="app_award_section__content__performance__third">
-            {/* <div className='app_award_section__content__performance__txt'>
-            <Bullet />
-              <Typography fontFamily='TrenchSlab' variant='h4'>2nd Runner Up</Typography>
-            </div> */}
-            <Image
-              src={assets.recyschool.third}
-              alt="winner"
-              priority
-              className="app_award_section__content__performance__img"
-            />
-            <div className="app_award_section__content__performance__reward">
-              <Typography
-                variant="P-SM"
-                className="app_award_section__content__performance__reward__text"
-              >
-                <Bullet />
-                <p>₦10,000.00</p>
-              </Typography>
-            </div>
-          </div>
+          <Typography className="app_award_section__content__performance__txt__px">
+            Through this Alterbin’s flagship project, students in primary/secondary schools are mobilized to contribute to community waste management efforts 
+            in an organized way and are rewarded. Recyschool offers learning incentives (such as full/ partial tuition payment, 
+            learning aids- notes and textbooks, and other school needs) to participants as an exchange for the disposal of recyclable items.
+          </Typography>
         </div>
       </div>
     </div>
@@ -102,7 +45,7 @@ function Award() {
 
 function Judges() {
   return (
-    <div className="app_judges_section">
+    <div className="app_judges_section" id={routes.home.hash.mentorship}>
       <div className="app_judges_section__content app_recyschool_page__px">
         <div className="app_judges_section__content__text">
           <Typography
@@ -112,7 +55,7 @@ function Judges() {
             className=""
           >
             <Line />
-            JUDGES
+            MENTORSHIP
           </Typography>
           <Typography
             fontFamily="TrenchSlab"
@@ -120,7 +63,7 @@ function Judges() {
             className="app_judges_section__content__text__h1"
           >
             <span className="d-flex justify-content-center">
-              Judges With Expert Knowledge In
+              Mentors With Expert Knowledge In
             </span>
             Sustainable Development And Innovations
           </Typography>
@@ -136,7 +79,7 @@ function Judges() {
             />
             <div className="app_judges_section__content__img_txt">
               <Typography fontFamily="TrenchSlab" variant="h5" fontWeight="md">
-                Anonymous
+              Empathetic listener
               </Typography>
               {/* <Typography>Role</Typography> */}
             </div>
@@ -150,7 +93,7 @@ function Judges() {
             />
             <div className="app_judges_section__content__img_txt">
               <Typography fontFamily="TrenchSlab" variant="h5" fontWeight="md">
-                Anonymous
+              Adaptive guidian
               </Typography>
               {/* <Typography>Role</Typography> */}
             </div>
@@ -164,7 +107,7 @@ function Judges() {
             />
             <div className="app_judges_section__content__img_txt">
               <Typography fontFamily="TrenchSlab" variant="h5" fontWeight="md">
-                Anonymous
+              Authentic relationship-builder
               </Typography>
               {/* <Typography variant="P-XXS">Role</Typography> */}
             </div>

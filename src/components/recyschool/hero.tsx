@@ -116,17 +116,17 @@ export default function Hero() {
               fontFamily="TrenchSlab"
               className="recyschool_hero_section__container__content__blur_circle__h1"
             >
-              31st
+              0th
             </Typography>
             <Typography variant="h2" fontFamily="TrenchSlab" color="sec-color">
-              Mar
+              X
             </Typography>
             <Typography
               variant="p"
               fontFamily="TrenchSlab"
               className="recyschool_hero_section__container__content__blur_circle__p"
             >
-              12:00pm-4:30pm
+              00:00pm
             </Typography>
           </div>
           <div className="recyschool_hero_section__container__content__txt">
@@ -143,7 +143,7 @@ export default function Hero() {
               className="recyschool_hero_section__container__content__txt__p"
             >
               {/* eslint-disable-next-line max-len */}
-              An exciting intra-school competition aimed at addressing waste management challenges and encouraging creative solutions to the issue.
+              An exciting project aimed at addressing waste management challenges and encouraging creative solutions to the issue.
             </Typography>
             <div className="recyschool_hero_section__container__content__txt__btn">
               <a href={config.services.google.forms.RECYCATHON_REGISTRATION} target="_blank" rel="noopener noreferrer">
@@ -154,12 +154,14 @@ export default function Hero() {
                   Register
                 </button>
               </a>
-              <button
-                type="button"
-                className="recyschool_hero_section__container__content__txt__btn2"
-              >
-                Learn More
-              </button>
+              <a href={`/#${routes.home.hash.learnMore}`} rel="noopener noreferrer">
+                <button
+                  type="button"
+                  className="recyschool_hero_section__container__content__txt__btn2"
+                >
+                  Learn More
+                </button>
+              </a>
             </div>
           </div>
         </div>

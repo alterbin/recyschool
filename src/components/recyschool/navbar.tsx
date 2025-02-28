@@ -10,8 +10,8 @@ const { hash } = staticRoutes.recyschool;
 
 const routes = [
   { label: 'About Us', href: `#${hash.aboutUs}` },
-  { label: 'Initiatives', href: `#${hash.initiatives}` },
-  { label: 'Events', href: `#${hash.events}` },
+  { label: 'Mentorship', href: `#${hash.mentorship}` },
+  { label: 'Prize', href: `#${hash.prize}` },
   { label: 'Contact', href: `#${hash.contactUs}` },
 ];
 

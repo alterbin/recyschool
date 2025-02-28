@@ -10,9 +10,8 @@ import { Arrow } from '../svgs/arrows';
 const { hash } = staticRoutes.home;
 
 const routes = [
-  { label: 'About Us', href: `#${hash.aboutUs}` },
-  { label: 'Initiatives', href: `/#${hash.initiatives}` },
-  { label: 'Events', href: `/#${hash.events}` },
+  { label: 'Prize', href: `/#${hash.prize}` },
+  { label: 'Mentorship', href: `/#${hash.mentorship}` },
   { label: 'Contact', href: `#${hash.contactUs}` },
 ];
 
