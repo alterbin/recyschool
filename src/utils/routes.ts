@@ -8,6 +8,7 @@ const routes = {
       contactUs: 'contact-us',
       prize: 'prize',
       mentorship: 'mentorship',
+      gallery: '/gallery',
     },
   },
   recyschool: {

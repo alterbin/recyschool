@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model gallery_collections {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String    @unique
+  description String
+  images      String[]  @default([])
+  createdAt   DateTime? @default(now()) @db.Timestamp(6)
+  updatedAt   DateTime? @default(now()) @updatedAt @db.Timestamp(6)
+}

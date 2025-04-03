@@ -11,14 +11,15 @@ import generateColorsCss from '@/utils/colors';
 import { Metas } from '@/components/shared/metas';
 import { ReactNode } from 'react';
 import { getMetadata } from '@/utils';
+import Providers from '@/contexts';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = getMetadata();
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export default function RootLayout({ children }: Props) {
   return (
@@ -27,7 +28,9 @@ export default function RootLayout({ children }: Props) {
         <style>{generateColorsCss()}</style>
       </Metas>
 
-      <body suppressHydrationWarning className={inter.className}>{children}</body>
+      <body suppressHydrationWarning className={inter.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
