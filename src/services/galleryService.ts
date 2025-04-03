@@ -2,9 +2,17 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function getGalleryCollections() {
+export async function getGalleryCollections(
+  skip: number,
+  take: number,
+  order?: 'asc' | 'desc',
+) {
   const [collections, total] = await Promise.all([
-    prisma.gallery_collections.findMany(),
+    prisma.gallery_collections.findMany({
+      skip,
+      take,
+      orderBy: { createdAt: order || 'desc' },
+    }),
     prisma.gallery_collections.count(),
   ]);
 
@@ -24,9 +32,23 @@ export interface GalleryCollectionResponse {
   total: number;
 }
 
-export const fetchCollections = async (): Promise<GalleryCollectionResponse> => {
+type Params = {
+  page: number;
+  take: number;
+  order?: string;
+};
+
+export const fetchCollections = async ({
+  page,
+  take,
+  order,
+}: Params): Promise<GalleryCollectionResponse> => {
   try {
-    const response = await fetch('/api/gallery-collections');
+    const response = await fetch(
+      `/api/gallery-collections?page=${page}&take=${take}${
+        order ? `&order=${order}` : ''
+      }`,
+    );
     if (!response.ok) {
       throw new Error('Failed to fetch collections');
     }

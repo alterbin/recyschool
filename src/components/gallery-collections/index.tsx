@@ -1,47 +1,78 @@
 'use client';
 
 import { useGalleryCollections } from '@/hooks/use-gallery-collection';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { Typography } from '../shared';
 import { Collection } from './collection';
 
 export function GalleryCollections() {
-  const { collections, loading } = useGalleryCollections();
+  const {
+    collections, loading, setPage, hasMore, isFetchingNextPage,
+  } = useGalleryCollections(10);
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView && hasMore) {
+      setPage((prev) => prev + 1);
+    }
+  }, [inView, hasMore, setPage]);
 
   return (
     <div className="pt-5 app_gallery_card app_recyschool_page__px">
       <div className="app_mission__top pt-5">
-        <Typography className="app_mission__top__h2 mb-2" fontFamily="TrenchSlab" fontWeight="md" variant="h2">
+        <Typography
+          className="app_mission__top__h2 mb-2"
+          fontFamily="TrenchSlab"
+          fontWeight="md"
+          variant="h2"
+        >
           Gallery Collections
         </Typography>
 
         <Typography className="app_mission__top__p">
-          Discover Our Comprehensive Portfolio of Sustainable Initiatives and Impactful Projects.
+          Discover Our Comprehensive Portfolio of Sustainable Initiatives and
+          Impactful Projects.
           {' '}
           <br />
           Explore Our Sustainable Initiatives.
         </Typography>
       </div>
       <div className="app_gallery_card_wrapper">
-        {!loading && collections?.data?.map((collection) => (
-          <div key={collection.id}>
-            <Collection {...collection} />
-          </div>
-        ))}
-
-        {!loading && collections?.total < 1 && (
-          <div className="app_gallery_card_empty">
-            <Typography variant="h5" fontWeight="md">No collections available</Typography>
-          </div>
-        )}
-
-        {loading && (
-        <div className="app_gallery_card_empty">
-          <Typography variant="h5" fontWeight="md">Loading collections...</Typography>
-        </div>
-        )}
+        {!loading
+          && collections?.data?.map((collection, index) => (
+            <div key={collection.id} ref={index === collections.data.length - 1 ? ref : null}>
+              <Collection {...collection} />
+            </div>
+          ))}
 
       </div>
+
+      {!loading && collections?.total < 1 && (
+      <div className="app_gallery_card_empty">
+        <Typography variant="h5" fontWeight="md">
+          No collections available
+        </Typography>
+      </div>
+      )}
+
+      {loading && (
+      <div className="app_gallery_card_empty w-100">
+        <Typography variant="h5" fontWeight="md">
+          Loading collections...
+        </Typography>
+      </div>
+      )}
+
+      {isFetchingNextPage && (
+        <div className="flex w-100 justify-content-center align-items-center text-center">
+          <Typography variant="h5" fontWeight="md">Loading more collections...</Typography>
+        </div>
+      )}
     </div>
   );
 }
