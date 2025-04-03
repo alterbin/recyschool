@@ -13,6 +13,7 @@ const routes = [
   { label: 'Prize', href: `/#${hash.prize}` },
   { label: 'Mentorship', href: `/#${hash.mentorship}` },
   { label: 'Contact', href: `#${hash.contactUs}` },
+  { label: 'Gallery', href: `${hash.gallery}` },
 ];
 
 function Menu({ className = '' }) {
