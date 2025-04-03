@@ -16,10 +16,12 @@ export function MorePicturesModal() {
       <div className="">
         <div className="px-6 pb-2 fs-5">
           <Typography variant="h4" fontWeight="md">
-            Pictures of {collection?.title}
+            Pictures of
+            {' '}
+            {collection?.title}
           </Typography>
           <Typography variant="p" fontWeight="rg">
-           {collection?.description}
+            {collection?.description}
           </Typography>
         </div>
         <div className="app_gallery_modal_image_wrapper overflow-y-auto">

@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import toast from 'react-hot-toast';
 
 const prisma = new PrismaClient();
 
@@ -59,6 +60,7 @@ export const fetchCollections = async ({
     };
   } catch (error) {
     console.log('Error fetching collections:', error);
+    toast.error('Error fetching collections');
     return {
       data: [],
       total: 0,
