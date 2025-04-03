@@ -1,0 +1,49 @@
+.modal{
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.app-modal-c{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal.fade {
+    transition: opacity 0.3s ease;
+  }
+  
+  .app-modal-dialog-centered {
+    max-height: 90vh; // Default height when centered
+    
+    @include screen('md'){
+      max-height: 70vh;
+    }
+  }
+  
+  .app-modal-dialog {
+    max-width: 90%;
+    min-width: 300px;
+    margin: 1rem;
+    z-index: 100;
+    width: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+
+    @include screen('md'){
+      padding: 10px;
+    }
+  }
+
+  
+  .app-modal-backdrop {
+    background-color: rgba(52, 80, 112, 0.5);
+    inset: 0px;
+    position: absolute;
+    z-index: 20;
+    overflow-y: hidden;
+  }

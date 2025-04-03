@@ -1,10 +1,15 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 'use client';
 
 import { useGalleryCollections } from '@/hooks/use-gallery-collection';
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useModals } from '@/contexts/modal';
+import { GalleryCollection } from '@/services/galleryService';
 import { Typography } from '../shared';
 import { Collection } from './collection';
+import { MorePicturesModal } from './modals';
 
 export function GalleryCollections() {
   const {
@@ -15,6 +20,15 @@ export function GalleryCollections() {
     triggerOnce: false,
     threshold: 0.5,
   });
+  const { modals, setModals } = useModals();
+
+  const handleShowMorePictures = (data: GalleryCollection) => {
+    setModals((draft) => ({
+      ...draft,
+      show: true,
+      record: data,
+    }));
+  };
 
   useEffect(() => {
     if (inView && hasMore) {
@@ -24,6 +38,7 @@ export function GalleryCollections() {
 
   return (
     <div className="pt-5 app_gallery_card app_recyschool_page__px">
+      {modals.show && (<MorePicturesModal />)}
       <div className="app_mission__top pt-5">
         <Typography
           className="app_mission__top__h2 mb-2"
@@ -45,7 +60,12 @@ export function GalleryCollections() {
       <div className="app_gallery_card_wrapper">
         {!loading
           && collections?.data?.map((collection, index) => (
-            <div key={collection.id} ref={index === collections.data.length - 1 ? ref : null}>
+            // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+            <div
+              key={collection.id}
+              ref={index === collections.data.length - 1 ? ref : null}
+              onClick={() => handleShowMorePictures(collection)}
+            >
               <Collection {...collection} />
             </div>
           ))}
