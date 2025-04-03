@@ -40,7 +40,6 @@ export const useGalleryCollections = (take = 10) => {
     };
 
     loadCollections();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, take]);
 
   return {
