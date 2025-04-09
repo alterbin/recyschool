@@ -50,7 +50,7 @@ export function GalleryCollections() {
         </Typography>
 
         <Typography className="app_mission__top__p">
-          A Visual Reflection of Our Commitment to Waste Reduction and Creative Reuse
+          A Visual Reflection of Our Commitment to Waste Reduction and Creative Reuse.
         </Typography>
       </div>
       <div className="app_gallery_card_wrapper">
