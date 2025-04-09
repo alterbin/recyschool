@@ -46,12 +46,11 @@ export function GalleryCollections() {
           fontWeight="md"
           variant="h2"
         >
-          Gallery Collections
+          Gallery
         </Typography>
 
         <Typography className="app_mission__top__p">
-          Discover Our Comprehensive Portfolio of Sustainable Initiatives and
-          Impactful Projects.
+          A Visual Reflection.
           {' '}
           <br />
           Explore Our Sustainable Initiatives.
