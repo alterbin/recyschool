@@ -12,6 +12,7 @@ import { Metas } from '@/components/shared/metas';
 import { ReactNode } from 'react';
 import { getMetadata } from '@/utils';
 import Providers from '@/contexts';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,6 +30,20 @@ export default function RootLayout({ children }: Props) {
       </Metas>
 
       <body suppressHydrationWarning className={inter.className}>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-1MQFY2TT8Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+
+           gtag('config', 'G-1MQFY2TT8Y');
+          `}
+        </Script>
         <Providers>{children}</Providers>
       </body>
     </html>
